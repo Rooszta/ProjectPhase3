@@ -28,30 +28,29 @@ The project wasa clasiffier model where data from the [Chicago Data Portal](http
 + Split the Data
 + Independent features selection
 + Exploratory Data Analysis (EDA)
-1.Handle Missing Values 
-+ Univariate Analysis
-1. Dependent Variable Analysis
-2. Independent Variable Analysis
-- Numerical features
-- Steps taken for numerical data
-- Encoding Numerical features
-- Categorical features
-- Steps taken for categorical data
-- Encoding Categorical features    
-+ Bivariate Analysis
-1. Numerical Features
-2. Categorical features
+  1. Handle Missing Values 
+  2. Univariate Analysis
+     + Target Variable Analysis
+     + Independent Variable Analysis
+       + Numerical features
+        - Steps taken for numerical data
+        - Encoding Numerical features
+      - Categorical features
+        - Steps taken for categorical data
+        - Encoding Categorical features    
+  3. Bivariate Analysis
+    + Numerical Features
+    + Categorical features
 + Data Modelling
-1. Pipeline
-2. Baseline Model - Logistic Regression
-- Visualize results
-3. Decision Tree
-- Visualize results
-4. Evaluation 
-- Visualize Results 
-- Logistic Regression Evaluation
-- Decision Tree Evaluation
-
+  1. Pipeline
+  2. Baseline Model - Logistic Regression
+  3. Visualize results
+  4. Decision Tree
+  5. Visualize results
++ Evaluation 
+  - Visualize Results 
+  - Logistic Regression Evaluation
+  - Decision Tree Evaluation
 + Conclusions
 + Recommendations
 + Next Steps
@@ -60,45 +59,81 @@ The project wasa clasiffier model where data from the [Chicago Data Portal](http
 
 ## Target feature encoded
 
-CRASH_TYPE identified as te tarhet variable. 
+CRASH_TYPE identified as the target variable. 
 using `LabelEncoder`, the column was transformed 
 the unique values in the columns were: 
 **'INJURY AND / OR TOW DUE TO CRASH'** encoded as `0`
 **'NO INJURY / DRIVE AWAY',** encoded as `1`
 
-No null values noticed, although the class had high imbalance
+No null values, although the class has high imbalance
 
 ## Univariate Analysis
 
-+ Target Variable Analysis
+1. Target Variable Analysis
 
-
-
-
-+ Independent variable analysis
+  ![image](https://github.com/user-attachments/assets/6f48cdcd-6c23-4f2a-8f6e-6dfe78ea4645)
   
-- Numerical features
+2. Independent variable analysis
+    The Independent features with most frequent value and unique value count:
+  
+    - WEATHER_CONDITION: Mode = CLEAR, Unique Values = 12
+    - LIGHTING_CONDITION: Mode = DAYLIGHT, Unique Values = 6
+    - ALIGNMENT: Mode = STRAIGHT AND LEVEL, Unique Values = 6
+    - ROADWAY_SURFACE_COND: Mode = DRY, Unique Values = 7
+    - ROAD_DEFECT: Mode = NO DEFECTS, Unique Values = 7
+    - DAMAGE: Mode = OVER $1,500, Unique Values = 3
+    - STREET_NO: Mode = 1600, Unique Values = 11559
+    - STREET_NAME: Mode = WESTERN AVE, Unique Values = 1617
+    - NUM_UNITS: Mode = 2, Unique Values = 17
+    - CRASH_HOUR: Mode = 15, Unique Values = 24
+    - CRASH_DAY_OF_WEEK: Mode = 6, Unique Values = 7
+    - CRASH_MONTH: Mode = 7, Unique Values = 12`
 
+  
+2.1 Numerical features
 
-- Categorical Features
+  ![image](https://github.com/user-attachments/assets/bf511c3b-2763-4e99-8b97-1df6253b47ed)
+
+2.2 Categorical Features
+
+  ![image](https://github.com/user-attachments/assets/094adaa2-83fb-4b5d-97b2-7b9b70d82a07)
+
+  ![image](https://github.com/user-attachments/assets/5e7bfb4a-23db-4423-a7fa-ef57551f2411)
+
+  ![image](https://github.com/user-attachments/assets/fba8b265-c17d-4bb0-b33f-649434b96678)
+
+  ![image](https://github.com/user-attachments/assets/e596ac90-e04d-4527-8061-52183b28f86e)
+
+  ![image](https://github.com/user-attachments/assets/4cca3982-d3a0-443f-9d28-c9e7285653b8)
+
+  ![image](https://github.com/user-attachments/assets/196c897a-fcca-4a69-bd0e-2e4753f4208d)
+
+  ![image](https://github.com/user-attachments/assets/ffa0d4bf-f3f0-44b8-8e65-dc10308587de)
+
 
 
 ## Bivariate analysis
 
 + Numerical features
 
+  ![image](https://github.com/user-attachments/assets/8b8ace96-c524-470c-8624-68ef3ff2d35a)
 
 + Categorical analysis
 
+  
 ## Data Modeling 
 
 + Baseline Model
 
+  ![image](https://github.com/user-attachments/assets/4673b005-3d3a-431d-bd34-a6ff2f3fe435)
+  
 + Decision Tree
 
+  ![image](https://github.com/user-attachments/assets/f86c5c7a-bb66-4387-b1f3-2ab0d991f566)
+  
 ## Evaluation
 
-+ Visualization
+  ![image](https://github.com/user-attachments/assets/998498f1-944d-433f-a2c7-ac489c05cc9b)
 
 ## Conclusions
 
