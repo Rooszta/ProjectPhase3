@@ -28,105 +28,113 @@ The project wasa clasiffier model where data from the [Chicago Data Portal](http
 + Split the Data
 + Independent features selection
 + Exploratory Data Analysis (EDA)
-    1.Handle Missing Values 
+1.Handle Missing Values 
 + Univariate Analysis
-    1. Dependent Variable Analysis
-    2. Independent Variable Analysis
-        - Numerical features
-            - Steps taken for numerical data
-            - Encoding Numerical features
-        - Categorical features
-            - Steps taken for categorical data
-            - Encoding Categorical features    
+1. Dependent Variable Analysis
+2. Independent Variable Analysis
+- Numerical features
+- Steps taken for numerical data
+- Encoding Numerical features
+- Categorical features
+- Steps taken for categorical data
+- Encoding Categorical features    
 + Bivariate Analysis
-    1. Numerical Features
-    2. Categorical features
+1. Numerical Features
+2. Categorical features
 + Data Modelling
-    1. Pipeline
-    2. Baseline Model - Logistic Regression
-        - Visualize results
-    3. Decision Tree
-        - Visualize results
-    4. Evaluation 
-        - Visualize Results 
-        - Logistic Regression Evaluation
-        - Decision Tree Evaluation
+1. Pipeline
+2. Baseline Model - Logistic Regression
+- Visualize results
+3. Decision Tree
+- Visualize results
+4. Evaluation 
+- Visualize Results 
+- Logistic Regression Evaluation
+- Decision Tree Evaluation
 
 + Conclusions
 + Recommendations
 + Next Steps
 
 # Results
+
 ## Target feature encoded
-    CRASH_TYPE identified as te tarhet variable. 
-    using `LabelEncoder`, the column was transformed 
-    the unique values in the columns were: 
-            **'INJURY AND / OR TOW DUE TO CRASH'** encoded as `0`
-            ** 'NO INJURY / DRIVE AWAY',** encoded as `1`
-    No null values noticed, although the class had high imbalance
+
+CRASH_TYPE identified as te tarhet variable. 
+using `LabelEncoder`, the column was transformed 
+the unique values in the columns were: 
+**'INJURY AND / OR TOW DUE TO CRASH'** encoded as `0`
+**'NO INJURY / DRIVE AWAY',** encoded as `1`
+
+No null values noticed, although the class had high imbalance
 
 ## Univariate Analysis
-    + Target Variable Analysis
 
-    
-
-
-     + Independent variable analysis
-        - Numerical features
++ Target Variable Analysis
 
 
-        - Categorical Features
+
+
++ Independent variable analysis
+  
+- Numerical features
+
+
+- Categorical Features
 
 
 ## Bivariate analysis
-    + Numerical features
+
++ Numerical features
 
 
-    + Categorical analysis
++ Categorical analysis
 
 ## Data Modeling 
-    + Baseline Model
 
-    + Decision Tree
++ Baseline Model
+
++ Decision Tree
 
 ## Evaluation
-    + Vizualization
+
++ Visualization
 
 ## Conclusions
 
-    ### Overall Model Performance:
+### Overall Model Performance:
 
-    `Logistic Regression` slightly outperformed the `Decision Tree` in terms of accuracy, precision, and ROC-AUC. However, both models have relatively low recall, which indicates they miss a significant number of true positive cases (i.e., severe crashes).
-    The Decision Tree model has a lower overall performance compared to the Logistic Regression, especially in terms of precision and ROC-AUC. However, it had fewer false negatives than Logistic Regression, indicating it might slightly better capture severe crashes, although this comes at the cost of overall predictive accuracy.
+`Logistic Regression` slightly outperformed the `Decision Tree` in terms of accuracy, precision, and ROC-AUC. However, both models have relatively low recall, which indicates they miss a significant number of true positive cases (i.e., severe crashes).
+The Decision Tree model has a lower overall performance compared to the Logistic Regression, especially in terms of precision and ROC-AUC. However, it had fewer false negatives than Logistic Regression, indicating it might slightly better capture severe crashes, although this comes at the cost of overall predictive accuracy.
 
-    ### Trade-off Between Precision and Recall:
+### Trade-off Between Precision and Recall:
 
-    Both models have similar F1-scores (~0.67), suggesting a balance between precision and recall. However, the recall is notably low for both models, which is concerning given the context of the problem (i.e., identifying severe crashes is crucial for insurance underwriting).
-    The models' ability to correctly classify severe crashes is inadequate, as reflected by the high number of false negatives. This means that in many cases where a crash is severe, the models fail to predict it correctly, which could result in underestimating the risk for certain claims.
+Both models have similar F1-scores (~0.67), suggesting a balance between precision and recall. However, the recall is notably low for both models, which is concerning given the context of the problem (i.e., identifying severe crashes is crucial for insurance underwriting).
+The models' ability to correctly classify severe crashes is inadequate, as reflected by the high number of false negatives. This means that in many cases where a crash is severe, the models fail to predict it correctly, which could result in underestimating the risk for certain claims.
 
-    ### Model Discriminative Power:
+### Model Discriminative Power:
 
-    The ROC-AUC scores for both models (Logistic Regression: ~63.42%, Decision Tree: ~58.87%) suggest that neither model is particularly strong at distinguishing between severe and non-severe crashes. The discriminative power of the models is relatively modest, indicating that more sophisticated models or additional data/features might be needed to improve prediction performance
+The ROC-AUC scores for both models (Logistic Regression: ~63.42%, Decision Tree: ~58.87%) suggest that neither model is particularly strong at distinguishing between severe and non-severe crashes. The discriminative power of the models is relatively modest, indicating that more sophisticated models or additional data/features might be needed to improve prediction performance
 
 
 ## Recommendations
 
-    **Feature Engineering**: Explore creating new features or transforming existing ones to capture more relevant information.
+**Feature Engineering**: Explore creating new features or transforming existing ones to capture more relevant information.
 
-    **Hyperparameter Tuning**: Fine-tune the hyperparameters of both models to optimize their performance.
+**Hyperparameter Tuning**: Fine-tune the hyperparameters of both models to optimize their performance.
 
-    **Ensemble Methods**: Combine multiple models (e.g., using random forests or gradient boosting) to potentially improve overall performance and reduce overfitting.
+**Ensemble Methods**: Combine multiple models (e.g., using random forests or gradient boosting) to potentially improve overall performance and reduce overfitting.
 
-    **Consider Other Models**: Experiment with other machine learning algorithms that might be better suited to your specific problem.
+**Consider Other Models**: Experiment with other machine learning algorithms that might be better suited to your specific problem.
 
-    **Domain Expertise**: Leverage insights from insurance experts to identify additional factors that might influence crash severity.
+**Domain Expertise**: Leverage insights from insurance experts to identify additional factors that might influence crash severity.
 
-    **Cross-Validation**:Use cross-validation techniques to ensure that the model performance observed is generalizable and not due to specificities in the train-test split. This will give a better estimate of model performance across different data subsets.
+**Cross-Validation**:Use cross-validation techniques to ensure that the model performance observed is generalizable and not due to specificities in the train-test split. This will give a better estimate of model performance across different data subsets.
 
 ## Next Steps
-    **Data Quality**: Ensure the quality and completeness of your data to avoid biases in your analysis. Using other datasets analysyze features that would increase model efficeincy
+**Data Quality**: Ensure the quality and completeness of your data to avoid biases in your analysis. Using other datasets analysyze features that would increase model efficeincy
 
-    **Cost-Sensitive Learning**:Given the high cost of missing severe crashes, explore cost-sensitive learning approaches where the model penalizes false negatives more heavily. This could help improve the recall for severe crashes, which is critical for the business problem.
+**Cost-Sensitive Learning**:Given the high cost of missing severe crashes, explore cost-sensitive learning approaches where the model penalizes false negatives more heavily. This could help improve the recall for severe crashes, which is critical for the business problem.
 
 
 
